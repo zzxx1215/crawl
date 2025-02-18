@@ -247,7 +247,7 @@ a 标签是一个识别符号 判断哪里是超链接
    - [x] 知识点解析
    - [x] 框架解析
    - [x] 环境部署的知识学习
-   - [ ] 环境部署
+   - [x] 环境部署
    - [ ] 数据库获取
    - [ ] 数据操作
    - [ ] 数据保存
@@ -287,9 +287,9 @@ a 标签是一个识别符号 判断哪里是超链接
 
 - [x] 创建爬虫的类：我需要知道我要把爬虫弄成一个什么样的类 这个需要解读一下现有项目的代码
 - [x] 创建流式工作环境：代码红色为什么
-- [ ] 添加数据源：这个数据源要是怎么样的，先本地弄一个行不行
-- [ ] 处理数据：解读一下这每一行代码，我的爬虫类和目标函数应该是什么样的类型
-- [ ] 添加数据类型
+- [x] 添加数据源：这个数据源要是怎么样的，先本地弄一个行不行
+- [x] 处理数据：解读一下这每一行代码，我的爬虫类和目标函数应该是什么样的类型
+- [x] 添加数据类型
 
 
 1. 问题1 
@@ -298,3 +298,11 @@ a 标签是一个识别符号 判断哪里是超链接
 1. 问题2
    回答：因为包没有背合适的导入
 2. 这个分发规则是基于redis实现的，flink主要负责数据流。
+3. 添加数据源：学习的项目中[爬虫项目](https://github.com/jiahong1314/DistributedCrawler) 采用的是Redis作为数据库，那么为什么要采用这个，流计算一定要用这种类型的数据库吗？我先做一个简单的事实更新的数据可不可行？
+   回答：
+   ```DataStreamSource<String> stream = env.addSource(new MyRedisSource());```
+   这个是一个指定数据源的代码块，myredissource 是自定义的一个类，负责实现env的读取数据接口SourceFunction。DataStreamSource<String>是作为一个数据源。不一定，一些简单的数据类型也可以。
+ ```SingleOutputStreamOperator<UrlList> urlListSingleOutputStreamOperator = stream.flatMap(new SpiderFlatMapFunction(iSpider));```
+flatMap：把映射的结果全部放到一起
+SingleOutputStreamOperator<UrlList>： 是 Flink 中表示经过转换操作后得到的单输出流的操作符类，<urllist>是一个定义的
+stream：它是一个 DataStream 对象，代表一个已经存在的数据流
