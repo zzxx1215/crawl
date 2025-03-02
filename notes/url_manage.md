@@ -20,7 +20,7 @@ steps:
 
 
 
-- [ ] url management based on Streaming computing framework
+- [x] url management based on Streaming computing framework
 Actuall, this part I assume I already get the url by spider. what I need to understand is three part:
 1. how to start the flink and set flink evrionment
    ``` StreamExecutionEnvironment env =
@@ -29,4 +29,14 @@ Actuall, this part I assume I already get the url by spider. what I need to unde
 3. figure out the level of url:the way of judgement.
    firstly,get the whole html by httputil.
 5. sinkfunction: how to store the url
-6. how to get the new url from flink.
+6. how to get the new url from flink.  
+ 
+---
+ now I need change the url management and distrubution for our target website.
+      anylize the website structure:which one is higher or lower?  
+      set the level judgementexe  
+      set the new condition for url management:
+
+what I need for url_anylisis part:
+1.get all urls
+2.get the picture data
