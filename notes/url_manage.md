@@ -40,3 +40,7 @@ Actuall, this part I assume I already get the url by spider. what I need to unde
 what I need for url_anylisis part:
 1.get all urls
 2.get the picture data
+
+---
+distrubution:  
+We will achieve 2 distrubution ways: hash method and  ifpicture.
