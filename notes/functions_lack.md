@@ -1,4 +1,4 @@
 - [x] url_management
-- [ ] url_distribute:avoid more than 2 spiders get same url.
+- [x] url_distribute:avoid more than 2 spiders get same url.
 - [ ] topdomainset
 - [ ] ui
